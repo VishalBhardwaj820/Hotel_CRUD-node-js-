@@ -4,20 +4,21 @@ const Hotel_db=require('../models/Hotel_db');
 // 1) Controller or Action  For  Inserting A New Record In database 
 module.exports.create=function(req,res){
 
-    Hotel_db.create({
-        name:req.params.name,
-        email:req.params.email
+    // Hotel_db.create({
+    //     name:req.query.name,
+    //     email:req.query.email,
         
-    },function(err,InsertedData){
+    // },function(err,InsertedData){
 
-            if(err)
-            {
-                console.log('Error Found In Inserting Data In database');
-                return;
-            }
+    //         if(err)
+    //         {
+    //             console.log('Error Found In Inserting Data In database');
+    //             return;
+    //         }
 
-            return res.json(200,{data:InsertedData});
-    });
+    //         return res.json(200,{data:InsertedData});
+    // });
+    return res.render('Insert_data');
 }
 
 
@@ -95,4 +96,10 @@ module.exports.readall=function(req,res){
         // THE LEFT WORKS IS HERE
 
     });
+}
+
+
+module.exports.home=function(req,res){
+
+  return res.render('Homepage');
 }

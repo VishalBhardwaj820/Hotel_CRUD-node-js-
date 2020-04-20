@@ -9,6 +9,7 @@ const hotel_routes=express.Router();
 // Importing the model for accessing the Record For THE CRUD OPeration
 const Hotel=require('../controllers/Hotel_Controllers');
 
+hotel_routes.get('/',Hotel.home);
 
 // 1) Route For  Inserting A New Record In database 
 hotel_routes.get('/create',Hotel.create);

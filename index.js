@@ -11,7 +11,8 @@ const data_base=require('./config/mongoose_configuration');   //Importing the Da
 
 app.use('/',require('./routes/Hotel_Routes'));                //This landing Route for The user
 
-app.use(express.urlencoded());                                //For the POST type of request
+app.use(express.urlencoded());
+app.use(express.static('assets'));                               //For the POST type of request
 
 
 app.listen(port,function(err){                           
